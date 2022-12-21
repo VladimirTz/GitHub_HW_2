@@ -1,0 +1,41 @@
+0. Создаем новый репозиторий в GITHUB для выполнения данного ДЗ.
+GITHUB: 
+-> Sign in your account on Github;
+-> Click "+" at the top right;
+-> Select "New repository" from the dropdown menu;
+-> Fill in "Repository name" and "Description" (optional);
+-> Check the box next to "Add a README file";
+-> Click "Create repository";
+-> Enter the created repository and copy the web URL (click "CODE" or copy from the browser address bar);
+-> Go to GitBash (Terminal):
+$ git clone https://github.com/VladimirTz/GitHub_HW_2.git (Репозиторий скланирован на локальный компьютер).
+
+1. На локальном репозитории сделать ветки для:
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+$ git branch Postman ; git branch Jmeter ; git branch CheckLists ; git branch Bug_Reports ; git branch SQL ; git branch Charles ; git branch Mobile_testing
+
+2. Запушить все ветки на внешний репозиторий:
+$ git push -u origin Postman Jmeter CheckLists Bug_Reports SQL Charles Mobile_testing ; git branch -a
+Bug_Reports
+  Charles
+  CheckLists
+  Jmeter
+  Mobile_testing
+  Postman
+  SQL
+* main
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+4. Запушить структуру багрепорта на внешний репозиторий
+5. Вмержить ветку Bag Reports в Main
+6. Запушить main на внешний репозиторий.
+7. В ветке CheckLists набросать структуру чек листа.
+8. Запушить структуру на внешний репозиторий
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+10. Синхронизировать Внешнюю и Локальную ветки Main
