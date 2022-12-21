@@ -1,13 +1,13 @@
 0. Создаем новый репозиторий в GITHUB для выполнения данного ДЗ.
 GITHUB: 
--> Sign in your account on Github;
--> Click "+" at the top right;
--> Select "New repository" from the dropdown menu;
--> Fill in "Repository name" and "Description" (optional);
--> Check the box next to "Add a README file";
--> Click "Create repository";
--> Enter the created repository and copy the web URL (click "CODE" or copy from the browser address bar);
--> Go to GitBash (Terminal):
+1. Sign in your account on Github;
+2. Click "+" at the top right;
+3. Select "New repository" from the dropdown menu;
+4. Fill in "Repository name" and "Description" (optional);
+5. Check the box next to "Add a README file";
+6. Click "Create repository";
+7. Enter the created repository and copy the web URL (click "CODE" or copy from the browser address bar);
+8. Go to GitBash (Terminal):
 $ git clone https://github.com/VladimirTz/GitHub_HW_2.git (Репозиторий скланирован на локальный компьютер).
 
 1. На локальном репозитории сделать ветки для:
@@ -35,7 +35,76 @@ Bug_Reports
 4. Запушить структуру багрепорта на внешний репозиторий
 5. Вмержить ветку Bag Reports в Main
 6. Запушить main на внешний репозиторий.
-7. В ветке CheckLists набросать структуру чек листа.
-8. Запушить структуру на внешний репозиторий
-9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
-10. Синхронизировать Внешнюю и Локальную ветки Main
+
+7. В ветке CheckLists набросать структуру чек листа:
+$ git switch CheckLists
+$ git branch
+
+  Bug_Reports
+  Charles
+* CheckLists
+  Jmeter
+  Mobile_testing
+  Postman
+  SQL
+  main
+
+$ touch checkLists.txt
+$ ls
+README.md  checkLists.txt
+$ vim checkLists.txt
+$ cat checkLists.txt
+
+Структура Чек-Листа:
+
+Основные столбцы стандартного Чек-листа:
+
+1. Название первого столбца: ID чек-листа.
+
+2. Название второго столбца: Title (Описание): Краткое описание теста (что тестируем), например: "Поле Email". И этот столбец должен содержать список проверок, например:
+2.1. Убедитесь, что поле Email присутствует на странице.
+2.2. Проверьте, отображается ли текст метки в поле Email или нет.
+2.3. Убедитесь, что текст метки Email совпадает с полем Email.
+2.4. Убедитесь, что поле Email  доступно, нажав на поле электронной почты.
+2.5. Убедитесь, что пользователь может вставить Email в поле с помощью клавиш клавиатуры Ctrl + v.
+2.6. Убедитесь, что пользователь может вставить Email с помощью мыши, щелкнув правой кнопкой мыши в поле Email и вставив Email.
+2.7. Проверьте, должно ли отображаться сообщение об ошибке в случае, если пользователь добавляет неверный Email.
+2.8. В поле вводим Email в нижнем регистре
+2.9. В поле вводим Email в верхнем регистре
+2.10. В поле вводим Email с цифрами в имени аккаунта
+И так далее...
+
+3. Название третьего столбца: Status(Результат). Этот столбец может содержать только статус Pass(Пройдено) или Failed(Не пройден).
+
+4. Название четвертого столбца: COMMENTS(Комментарии). Если статус проверки Failed(Не пройден), оставляем комментарий о возникшей ошибке.
+
+Можно добавить столбцы для расширенного Чек-листа:
+
+5. Столбец:  Attachment(Вложение). Если статус проверки Failed(Не пройден), следует вставить ссылку на скриншот или любые другие документы, которые могут помочь прояснить проблему.
+
+6. Столбец: какой именно это тест Positive/Negative.
+
+7. Столбец: EXPECTED RESULT(Ожидаемый результат).
+______________________________________________________________________________________________________________________________________________________________________________________
+8. Запушить структуру на внешний репозиторий:
+$ git add checkLists.txt
+$ git status
+$ git commit -m 'creat file checklists.txt'
+$ git status
+$ git push
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main:
+GITHUB: 
+1. Sign in your account on Github as needed;
+2. Click the icon of your account at the top left;
+3. Select "Your repositories" from the dropdown menu;
+4. Choose the "Github_HW2" repository;
+5. Click "Compare & pull request";
+6. Leave a comment "Merging from the CheckLists branch into the Main branch" and click "Create pull requst";
+7. Click "Merge pull request and then "Confirm merge";
+8. Go to GitBash (Terminal)
+
+10. Синхронизировать Внешнюю и Локальную ветки Main:
+$ git switch main ; git fetch
+$ git pull
+Already up to date.
