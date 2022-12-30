@@ -31,10 +31,78 @@ Bug_Reports
   SQL
 * main
 
-3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
-4. Запушить структуру багрепорта на внешний репозиторий
-5. Вмержить ветку Bag Reports в Main
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта:
+$ git branch
+  Bug_Reports
+  Charles
+  CheckLists
+  Jmeter
+  Mobile_testing
+  Postman
+  SQL
+* main
+$ git checkout Bug_Reports
+$ git branch
+* Bug_Reports
+  Charles
+  CheckLists
+  Jmeter
+  Mobile_testing
+  Postman
+  SQL
+  main
+$ git touch bug_report.txt
+$ git status
+On branch Bug_Reports
+Your branch is up to date with 'origin/Bug_Reports'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bug_report.txt
+$ vim bug_report.txt (ввели нужные данные)
+$ cat bug_report.txt
+Структура Bug_report:
+
+1. Заголовок(Headline): кратко опишите проблему, четко указав причину и тип ситуации с ошибкой.
+2. Описание(Discription):
+- предварительное условие: укажите, что вам нужно сделать, чтобы подготовиться к тестированию проекта.
+- шаги для воспроизведения (STR): запишите шаги, пройдя по которым можно воспроизвести ошибку.
+- фактический результат (AR): опишите фактический результат. Результат, который мы получаем, выполнив все шаги по воспроизведению
+- ожидаемый результат (ER): результат, который должен быть в соответствии с нашими требованиями, то, что мы действительно должны получить. Вы можете добавить ссылку на спецификацию.
+3. Проект(Project): напишите название тестируемого проекта.
+4. Компонент(Component): укажите название части или функции тестируемого проекта.
+5. Версия билда(Version): версия сборки на которой обнаружена ошибка и она воспроизводится.
+6. Серьезность(Severity): укажите критичность ошибки: S1 Blocker, S2 Critical, S3 Major, S4 Minor, S5 Trivial.
+7. Приоритет(Priority): укажите приоритет ошибки: P1 High, P2 Medium, P3 Low.
+8. Статус(Status): статус бага в его жизненном цикле(New, Opened, Postponed, Rejected, Duplicate, Assigned, Fixed, Verified, Reopened, or Closed).
+9. Окружение(Environment): операционная система, разрядность, браузер, в котором был обнаружен данный дефект, его версия. Расписываем в каком именно окружении был обнаружен наш дефект.(Dew, Stage, Prod).
+10. Автор(Author): Заполните контактные данные репортера об ошибках.
+11. Назначено(Assigned to): Напишите имя человека, назначенного для решения проблемы.
+12. Вложение(Attachment): Вставьте ссылку на файл журнала, скриншот или любой другой документ, который может помочь прояснить причину ошибки или указать способ решения проблемы.
+13. ID дефекта.
+
+4. Запушить структуру багрепорта на внешний репозиторий:
+$ git add bug_report.txt
+$ git status
+On branch Bug_Reports
+Your branch is up to date with 'origin/Bug_Reports'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   bug_report.txt
+$ git commit -m "create new file bug_report.txt"
+$ git push
+
+5. Вмержить ветку Bag Reports в Main:
+$ git switch main
+$ git merge Bug_Reports -m 'Merging from the Bug_Reports branch into the Main branch'
+Merge made by the 'ort' strategy.
+ bug_report.txt | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
+ create mode 100644 bug_report.txt
+
 6. Запушить main на внешний репозиторий.
+$ git push
 
 7. В ветке CheckLists набросать структуру чек листа:
 $ git switch CheckLists
