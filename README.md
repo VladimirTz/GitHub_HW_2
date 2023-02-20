@@ -1,4 +1,5 @@
-# GitHub_HW_2
+# Git-Bash  
+## GitHub_HW_2 [DZgithubhw2.txt](<https://github.com/VladimirTz/GitHub_HW_2/blob/main/DZgithubhw2.txt>) 
 1. На локальном репозитории сделать ветки для:
 - Postman
 - Jmeter
